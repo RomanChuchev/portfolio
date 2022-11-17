@@ -1,19 +1,22 @@
 {
   "name": "portfolio",
-  "homepage": "https://github.com/RomanChuchev/portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfolio of Roman Chuchev",
   "main": "index.js",
-  "scripts": {
-    "style": "sass --watch css/style.scss css/style.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "keywords": [
+    "portfolio",
+    "cv",
+    "js",
+    "css",
+    "html"
+  ],
+  "author": "RomanChuchev",
+  "license": "ISC",
+  "homepage": "https://github.com/RomanChuchev/portfolio",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RomanChuchev/portfolio.git"
   },
-  "author": "Roman Chuchev",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/RomanChuchev/portfolio/issues"
   }
