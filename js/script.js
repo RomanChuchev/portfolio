@@ -1,3 +1,10 @@
+const typed = new Typed(".typing", {
+  strings: ["Web Designer", "Graphic Designer", "Web Developer", "Translator"],
+  typeSpeed: 100,
+  backSpeed: 60,
+  loop: true,
+});
+
 const nav = document.querySelector(".nav");
 const navList = nav.querySelectorAll("li");
 const sections = document.querySelectorAll(".section");
