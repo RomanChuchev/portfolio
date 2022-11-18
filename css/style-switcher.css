@@ -14,6 +14,7 @@
 .style-switcher.open {
   transform: translateX(-25px);
 }
+
 .style-switcher .s-icon {
   position: absolute;
   height: 40px;
@@ -56,26 +57,49 @@
   justify-content: space-between;
 }
 
-.style-switcher .colors span {
+.style-switcher .colors .color {
   display: inline-block;
   height: 30px;
   width: 30px;
   border-radius: 50%;
   cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.style-switcher .color-1 {
+.style-switcher .colors .color:before {
+  content: "✔";
+  color: white;
+  position: absolute;
+  font-size: 22px;
+  top: 0;
+  left: 6px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.style-switcher .colors .color:hover {
+  transform: scale(1.1);
+}
+
+.style-switcher .colors span:hover::before {
+  opacity: 1;
+}
+.style-switcher .colors .active {
+  pointer-events: none;
+  border: 1px solid var(--text-black-700);
+}
+#color-1 {
   background: #ec1839;
 }
-.style-switcher .color-2 {
+#color-2 {
   background: #fa5b0f;
 }
-.style-switcher .color-3 {
+#color-3 {
   background: #37b182;
 }
-.style-switcher .color-4 {
+#color-4 {
   background: #1854b4;
 }
-.style-switcher .color-5 {
+#color-5 {
   background: #f021b2;
 }

@@ -90,21 +90,27 @@
       <main class="main">
         <section class="home section" id="home">
           <div class="container">
-            <div class="row">
+            <div class="row greetings">
               <div class="home-info padd-15">
-                <h3 class="hello">
-                  Hello, my name is
-                  <span class="name">Roman Chuchev</span>
-                </h3>
+                <div class="row">
+                  <h3 class="hello">
+                    Hello, my name is
+                    <span class="name">Roman Chuchev</span>
+                  </h3>
+                </div>
                 <h3 class="my-profession">
-                  I`m a
+                  I'm a
                   <span class="typing"></span>
                 </h3>
                 <p>
                   My expertise is to create and website design, graphic design,
                   and many more...
                 </p>
-                <a href="#" class="btn">Download CV</a>
+                <div class="row">
+                  <a href="#" class="btn download"
+                    >Download CV <i class="fa fa-download"></i>
+                  </a>
+                </div>
               </div>
               <div class="home-img padd-15">
                 <img src="images/hero.jpg" alt="hero" />
@@ -129,7 +135,7 @@
                     </p>
                     <p class="description__item">
                       I have knowledge of Javascript, React, CSS (SASS), Gulp,
-                      Wepback, Figma, Docker.
+                      Wepback, REST API, Figma, Docker.
                     </p>
                     <p class="description__item">
                       I am looking forward to working in teams as well as
@@ -151,7 +157,8 @@
                 </div>
                 <div class="row">
                   <div class="personal-info padd-15">
-                    <div class="row">
+                    <h3 class="title">Personal information</h3>
+                    <div class="row info-list">
                       <div class="info-item padd-15">
                         <p>
                           Birthday :
@@ -163,60 +170,32 @@
                       </div>
                       <div class="info-item padd-15">
                         <p>
+                          Citizenship :
+                          <span>Russia</span>
+                        </p>
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>
                           City :
                           <span> Moscow</span>
                         </p>
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          Email :
-                          <span>
-                            <a target="_blank" href="mailto:romanok20@gmail.com"
-                              >romanok20@gmail.com</a
-                            ></span
-                          >
+                          Russian :
+                          <span> Native</span>
                         </p>
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          Telegram :
-                          <a target="_blank" href="https://t.me/roman_chuchev "
-                            >@roman_chuchev</a
-                          >
-                        </p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>
-                          Phone :
-                          <a target="_blank" href="tel:+7(977)280-56-92 "
-                            >+7(977)280-56-92
-                          </a>
-                        </p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>
-                          Github :
-                          <a
-                            target="_blank"
-                            href="https://github.com/RomanChuchev"
-                            >RomanChuchev</a
-                          >
+                          English :
+                          <span> Pre-Intermediate</span>
                         </p>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="buttons padd-15">
-                        <a
-                          href="#contact"
-                          data-section-index="1"
-                          class="btn hire-me"
-                          >Hire me</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skills padd-15">
-                    <div class="row">
+                    <div class="row skills">
+                      <h3 class="title">Skills</h3>
+
                       <div class="skill-item padd-15">
                         <h5>JS</h5>
                         <div class="progress">
@@ -224,135 +203,129 @@
                           <div class="skill-percent">73%</div>
                         </div>
                       </div>
+
                       <div class="skill-item padd-15">
                         <h5>CSS</h5>
                         <div class="progress">
-                          <div class="progress-in" style="width: 78%"></div>
-                          <div class="skill-percent">78%</div>
+                          <div class="progress-in" style="width: 84%"></div>
+                          <div class="skill-percent">84%</div>
                         </div>
                       </div>
                       <div class="skill-item padd-15">
                         <h5>HTML</h5>
                         <div class="progress">
-                          <div class="progress-in" style="width: 89%"></div>
-                          <div class="skill-percent">89%</div>
+                          <div class="progress-in" style="width: 91%"></div>
+                          <div class="skill-percent">91%</div>
                         </div>
                       </div>
                       <div class="skill-item padd-15">
-                        <h5>Bootstrap</h5>
+                        <h5>SCSS</h5>
+                        <div class="progress">
+                          <div class="progress-in" style="width: 80%"></div>
+                          <div class="skill-percent">80%</div>
+                        </div>
+                      </div>
+                      <div class="skill-item padd-15">
+                        <h5>React</h5>
                         <div class="progress">
                           <div class="progress-in" style="width: 62%"></div>
                           <div class="skill-percent">62%</div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="education padd-15">
-                    <h3 class="title">Education</h3>
-                    <div class="row">
-                      <div class="timeline-box padd-15">
-                        <div class="timeline shadow-dark">
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2021 - 2022
-                            </h3>
-                            <h4 class="timeline-title">
-                              Online course "JavaScript"
-                            </h4>
-                            <p class="timeline-text">
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit. Optio, quibusdam consequatur?
-                              Expedita quae, sequi molestias laborum odit atque
-                              unde nostrum fugit ipsam, mollitia alias amet
-                              ullam a asperiores rerum eligendi!
-                            </p>
-                          </div>
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2022
-                            </h3>
-                            <h4 class="timeline-title">
-                              React + Redux - Professional Development
-                            </h4>
-                            <p class="timeline-text">
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit. Optio, quibusdam consequatur?
-                              Expedita quae, sequi molestias laborum odit atque
-                              unde nostrum fugit ipsam, mollitia alias amet
-                              ullam a asperiores rerum eligendi!
-                            </p>
-                          </div>
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2022 - 2023
-                            </h3>
-                            <h4 class="timeline-title">
-                              The Rolling Scope School
-                            </h4>
-                            <p class="timeline-text">
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit. Optio, quibusdam consequatur?
-                              Expedita quae, sequi molestias laborum odit atque
-                              unde nostrum fugit ipsam, mollitia alias amet
-                              ullam a asperiores rerum eligendi!
-                            </p>
-                          </div>
+                      <div class="skill-item padd-15">
+                        <h5>Git&Github</h5>
+                        <div class="progress">
+                          <div class="progress-in" style="width: 68%"></div>
+                          <div class="skill-percent">68%</div>
                         </div>
                       </div>
                     </div>
+                    <div class="row buttons padd-15">
+                      <a
+                        href="#contact"
+                        data-section-index="1"
+                        class="btn hire-me"
+                        >Hire me</a
+                      >
+                    </div>
                   </div>
-                  <div class="experience padd-15">
-                    <h3 class="title">Experience</h3>
+                  <div class="education padd-15">
+                    <h3 class="title">Education and courses</h3>
                     <div class="row">
                       <div class="timeline-box padd-15">
                         <div class="timeline shadow-dark">
                           <div class="timeline-item">
                             <div class="circle-dot"></div>
                             <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2021 - 2022
-                            </h3>
-                            <h4 class="timeline-title">Freelance</h4>
-                            <p class="timeline-text">
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit. Optio, quibusdam consequatur?
-                              Expedita quae, sequi molestias laborum odit atque
-                              unde nostrum fugit ipsam, mollitia alias amet
-                              ullam a asperiores rerum eligendi!
-                            </p>
-                          </div>
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2022
-                            </h3>
-                            <h4 class="timeline-title">Open Source</h4>
-                            <p class="timeline-text">
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit. Optio, quibusdam consequatur?
-                              Expedita quae, sequi molestias laborum odit atque
-                              unde nostrum fugit ipsam, mollitia alias amet
-                              ullam a asperiores rerum eligendi!
-                            </p>
-                          </div>
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2022 - 2023
+                              <i class="fa fa-calendar"></i> September, 2022 -
+                              now
                             </h3>
                             <h4 class="timeline-title">
-                              Working in teams at RS School
+                              Javascript/Front-End Program
                             </h4>
                             <p class="timeline-text">
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit. Optio, quibusdam consequatur?
-                              Expedita quae, sequi molestias laborum odit atque
-                              unde nostrum fugit ipsam, mollitia alias amet
-                              ullam a asperiores rerum eligendi!
+                              I'm currently in the Rolling Scope School. I
+                              consolidate my previous knowledge and study new
+                              topics, such as Webpack, TypeScript and NodeJS
+                            </p>
+                          </div>
+                          <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-date">
+                              <i class="fa fa-calendar"></i> March, 2022 -
+                              August, 2022
+                            </h3>
+                            <h4 class="timeline-title">React</h4>
+                            <p class="timeline-text">
+                              In Juriy Bura's React course at Udemy, I learned
+                              how to use React to build modern front-end
+                              applications and REST API to access data on the
+                              server
+                            </p>
+                          </div>
+                          <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-date">
+                              <i class="fa fa-calendar"></i> September, 2021 -
+                              March, 2022
+                            </h3>
+                            <h4 class="timeline-title">
+                              JavaScript/Profession front-end developer
+                            </h4>
+                            <p class="timeline-text">
+                              Studied the basics of JavaScript and web layout.
+                              learned to work in the bash command line and with
+                              the Git version control system
+                            </p>
+                          </div>
+                          <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-date">
+                              <i class="fa fa-calendar"></i> 2019 - 2022
+                            </h3>
+                            <h4 class="timeline-title">
+                              Translator in the field of professional
+                              communications
+                            </h4>
+                            <p class="timeline-text">
+                              Postgraduate Diploma at the State Humanitarian and
+                              Technological University. Learned English to
+                              Pre-Intermediate level
+                            </p>
+                          </div>
+                          <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-date">
+                              <i class="fa fa-calendar"></i> 2018 - 2022
+                            </h3>
+                            <h4 class="timeline-title">
+                              Lecturer in history and social studies
+                            </h4>
+                            <p class="timeline-text">
+                              Bachelor's degree at the State Humanitarian and
+                              Technological University. I learned to find
+                              information on my own, work in a team and find a
+                              common language with people of different ages
                             </p>
                           </div>
                         </div>
@@ -372,69 +345,86 @@
               </div>
             </div>
             <div class="row">
-              <div class="service-item padd-15">
+              <div class="service-item">
                 <div class="service-item-inner">
                   <div class="icon">
                     <i class="fa fa-mobile-alt"></i>
                   </div>
                   <h4>Responsive Design</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <i class="fa fa-circle-check"></i>
+                    Develop the user interface
+                  </p>
+                  <p>
+                    <i class="fa fa-circle-check"></i>
+                    Web page development
+                  </p>
+                  <p>
+                    <i class="fa fa-circle-check"></i>
+                    Create ux element interactions
+                  </p>
+                  <p>
+                    <i class="fa fa-circle-check"></i>
+                    Site adaptation to any device screen
                   </p>
                 </div>
               </div>
-              <div class="service-item padd-15">
+              <div class="service-item">
                 <div class="service-item-inner">
                   <div class="icon">
                     <i class="fa fa-laptop-code"></i>
                   </div>
                   <h4>Web Design</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <i class="fa fa-circle-check"></i>
+                    The logical structure of the web page;
                   </p>
-                </div>
-              </div>
-              <div class="service-item padd-15">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa fa-palette"></i>
-                  </div>
-                  <h4>Graphic Design</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <i class="fa fa-circle-check"></i>
+                    Convenient solutions for presenting information;
                   </p>
+                  <p>
+                    <i class="fa fa-circle-check"></i>
+                    Beautiful design of the web project.
+                  </p>
+                  <p>
+                    <i class="fa fa-circle-check"></i>
+                    Elaboration of the appearance of pages for different
+                    devices;
+                  </p>
+                  <p></p>
                 </div>
               </div>
-              <div class="service-item padd-15">
+              <div class="service-item">
                 <div class="service-item-inner">
                   <div class="icon">
                     <i class="fa fa-code"></i>
                   </div>
                   <h4>Clean Code</h4>
+                  <p>In my work, I adhere to the principles :</p>
+                  <p><i class="fa fa-circle-check"></i>Don’t Repeat Yourself</p>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <i class="fa fa-circle-check"></i>Keep it short and simple
                   </p>
+                  <p>
+                    <i class="fa fa-circle-check"></i>Follow the codestyle and
+                    rules adopted on the project.
+                  </p>
+                  <p>
+                    <i class="fa fa-circle-check"></i>Work with abstractions
+                  </p>
+                  <p><i class="fa fa-circle-check"></i>Separation of tasks</p>
                 </div>
               </div>
-              <div class="service-item padd-15">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa fa-search"></i>
-                  </div>
-                  <h4>Seo Marketing</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div>
-              </div>
-              <div class="service-item padd-15">
+              <div class="service-item">
                 <div class="service-item-inner">
                   <div class="icon">
                     <i class="fa fa-bullhorn"></i>
                   </div>
                   <h4>Great Support</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <i class="fa fa-circle-check"></i>
+                    Always in touch and ready to help
                   </p>
                 </div>
               </div>
@@ -517,7 +507,7 @@
               </div>
             </div>
             <h3 class="contact-title padd-15">Have You Any Question ?</h3>
-            <h4 class="contact-sub-title padd-15">I`M AT YOUR SERVICES</h4>
+            <h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICES</h4>
             <div class="row">
               <div class="contact-info-item padd-15">
                 <div class="icon">
@@ -539,7 +529,7 @@
                   ></a>
                 </div>
                 <h4>GitHub</h4>
-                <p>RonamChuchev</p>
+                <p>RomanChuchev</p>
               </div>
 
               <div class="contact-info-item padd-15">
@@ -564,7 +554,7 @@
             </div>
             <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
             <h4 class="contact-sub-title padd-15">
-              I`M VERY RESPOSIVE TO MESSAGES
+              I'M VERY RESPOSIVE TO MESSAGES
             </h4>
             <div class="row">
               <div class="contact-form padd-15">
@@ -619,6 +609,15 @@
             </div>
           </div>
         </section>
+        <div id="popup" class="popup service">
+          <div class="popap__area close-popup"></div>
+          <div class="popup__content">
+            <button class="popup__close close-popup">
+              <i class="fa fa-xmark"></i>
+            </button>
+            <div id="popup-card" class="popup__card"></div>
+          </div>
+        </div>
       </main>
     </div>
     <div class="style-switcher">
@@ -630,11 +629,31 @@
       </div>
       <h4>Theme Colors</h4>
       <div class="colors">
-        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+        <span
+          id="color-1"
+          class="color"
+          onclick="setActiveStyle('color-1')"
+        ></span>
+        <span
+          id="color-2"
+          class="color"
+          onclick="setActiveStyle('color-2')"
+        ></span>
+        <span
+          id="color-3"
+          class="color"
+          onclick="setActiveStyle('color-3')"
+        ></span>
+        <span
+          id="color-4"
+          class="color"
+          onclick="setActiveStyle('color-4')"
+        ></span>
+        <span
+          id="color-5"
+          class="color"
+          onclick="setActiveStyle('color-5')"
+        ></span>
       </div>
     </div>
     <script
@@ -643,5 +662,6 @@
     ></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
+    <script src="js/popups.js"></script>
   </body>
 </html>

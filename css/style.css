@@ -66,7 +66,7 @@ body {
 .container {
   max-width: 1100px;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .section .container {
@@ -233,6 +233,8 @@ body {
   position: absolute;
   top: -6px;
   left: 0;
+  transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s,
+    transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
 }
 
 .aside .nav-toggler.open span::before {
@@ -248,6 +250,8 @@ body {
   position: absolute;
   top: 6px;
   left: 0;
+  transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s,
+    transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
 }
 
 .aside .nav-toggler.open span::after {
@@ -290,13 +294,19 @@ body {
   min-height: 100vh;
   display: flex;
   color: var(--text-black-900);
+  z-index: 1;
 }
-
+.greetings {
+  margin-top: 100px;
+}
 .home .home-info {
   flex: 0 0 60%;
   max-width: 60%;
 }
 
+.home .home-info a .fa {
+  font-size: 22px;
+}
 h3.hello {
   font-size: 28px;
   margin: 15px 0;
@@ -408,14 +418,13 @@ h3.my-profession {
 .description__item::after {
   content: "/>";
   font-size: 20px;
-  top: -3px;
   position: absolute;
   color: var(--skin-color);
 }
 
 .about .about-content .personal-info {
-  flex: 0 0 60%;
-  max-width: 60%;
+  flex: 0 0 50%;
+  max-width: 50%;
   margin-top: 40px;
 }
 
@@ -446,20 +455,18 @@ h3.my-profession {
   display: inline-block;
 }
 
-.about .about-content .personal-info .buttons {
-  margin-top: 30px;
-}
-
 .about .about-content .personal-info .buttons .btn {
   margin-top: 10px;
 }
 
 .about .about-content .skills {
-  flex: 0 0 40%;
-  max-width: 40%;
-  margin-top: 40px;
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-top: 60px;
 }
-
+.about .about-content .skills .title {
+  margin-left: 20px;
+}
 .about .about-content .skills .skill-item {
   flex: 0 0 100%;
   max-width: 100%;
@@ -545,18 +552,23 @@ h3.my-profession {
   left: 7px;
   top: 0;
   background: var(--skin-color);
+  border: 1px solid var(--skin-color);
 }
 
 .about .about-content .timeline .circle-dot {
   position: absolute;
   left: 0;
   top: 0;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: var(--skin-color);
+  border: 2px solid var(--bg-black-100);
+  transition: all 0.3s ease;
 }
-
+.about .about-content .timeline .timeline-item:hover .circle-dot {
+  transform: scale(1.1);
+}
 .about .about-content .timeline .timeline-date {
   font-weight: 400;
   font-size: 14px;
@@ -571,7 +583,7 @@ h3.my-profession {
 .about .about-content .timeline .timeline-title {
   font-weight: 700;
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   text-transform: capitalize;
   color: var(--text-black-900);
 }
@@ -581,6 +593,9 @@ h3.my-profession {
   font-size: 16px;
   text-align: justify;
   color: var(--text-black-700);
+}
+.about .about-content .timeline .timeline-text span {
+  font-weight: 600;
 }
 
 /* Service */
@@ -592,8 +607,17 @@ h3.my-profession {
   margin-bottom: 30px;
   flex: 0 0 33.333%;
   max-width: 33.333%;
+  position: relative;
+  padding: 0 15px;
 }
-
+.service .service-item::before {
+  content: "";
+  width: 95%;
+  cursor: pointer;
+  margin: auto;
+  inset: 0;
+  position: absolute;
+}
 .service .service-item .service-item-inner {
   background: var(--bg-black-100);
   border: 1px solid var(--bg-black-50);
@@ -603,7 +627,7 @@ h3.my-profession {
   transition: all 0.3s ease;
 }
 
-.service .service-item .service-item-inner:hover {
+.service .service-item:hover .service-item-inner {
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
@@ -624,11 +648,11 @@ h3.my-profession {
   transition: all 0.3s ease;
 }
 
-.service .service-item .service-item-inner:hover .icon {
+.service .service-item:hover .service-item-inner .icon {
   background: var(--skin-color);
 }
 
-.service .service-item .service-item-inner:hover .icon .fa {
+.service .service-item:hover .service-item-inner .icon .fa {
   font-size: 25px;
   color: #ffffff;
 }
@@ -645,8 +669,12 @@ h3.my-profession {
   font-size: 16px;
   color: var(--text-black-700);
   line-height: 25px;
+  display: none;
 }
-
+.service .service-item .service-item-inner p .fa {
+  color: var(--skin-color);
+  margin-right: 5px;
+}
 /* Portfolio */
 .portfolio .container {
   padding-bottom: 40px;
@@ -828,12 +856,39 @@ h3.my-profession {
     flex: 0 0 50%;
     max-width: 50%;
   }
+
+  .home .home-img::after,
+  .home .home-img::before {
+    display: none;
+  }
+  .home .home-img img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid var(--skin-color);
+  }
+  .greetings {
+    flex-direction: column-reverse;
+    margin-top: 60px;
+  }
+  .home .home-img,
   .home .home-info {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  .home .home-img {
-    display: none;
+  h3.hello {
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  h3.my-profession {
+    font-size: clamp(22px, 4vw, 30px);
+    margin: 15px 0;
+  }
+  .home-info .download {
+    width: 205.5px;
+    margin: 0 auto;
   }
 }
 @media (max-width: 767px) {
@@ -848,9 +903,106 @@ h3.my-profession {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  h3.hello {
-    max-width: 300px;
+
+  .about .about-content .personal-info .buttons {
+    flex: 0 0 100%;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+.important {
+  z-index: 1001;
+}
+
+/* popap */
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 250;
+  visibility: hidden;
+}
+
+.popap__area {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 25;
+}
+
+.popup.open {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__content {
+  opacity: 0;
+  padding: 30px 20px;
+  position: relative;
+  transition: all 0.5s ease;
+  transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+  z-index: 30;
+}
+
+.popup.open .popup__content {
+  transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+  transition: all 0.5s ease;
+
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup__close {
+  cursor: pointer;
+  background-color: transparent;
+  border: unset;
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.popup__close .fa {
+  text-decoration: none;
+  color: var(--skin-color);
+  font-size: 30px;
+}
+.popup__card {
+  width: clamp(267px, 35vw, 400px);
+  border-radius: 20px;
+}
+.popup__card .service-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0;
+}
+.popup__card .service-item::before {
+  inset: auto;
+}
+
+.popup__card .service-item .service-item-inner p {
+  text-align: start;
+  display: block;
+}
+
+.popup__card .service-item .service-item-inner .icon {
+  background: var(--skin-color);
+}
+
+.popup__card .service-item .service-item-inner .icon .fa {
+  font-size: 25px;
+  color: #ffffff;
+}
