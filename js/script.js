@@ -73,3 +73,4 @@ function asideSectionTogglerBtn() {
     sections[i].classList.toggle("open");
   }
 }
+

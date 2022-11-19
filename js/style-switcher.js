@@ -11,19 +11,17 @@ styleSwircherToggle.addEventListener("click", () => {
         }
       })
     );
-  }
-});
 
-window.addEventListener("scroll", () => {
-  if (document.querySelector(".style-switcher").classList.contains("open")) {
-    document.querySelector(".style-switcher").classList.remove("open");
-  }
-});
-document.addEventListener("keydown", function (e) {
-  if (e.which === 27) {
-    if (document.querySelector(".style-switcher").classList.contains("open")) {
+    window.addEventListener("scroll", () => {
+      console.log("scroll");
       document.querySelector(".style-switcher").classList.remove("open");
-    }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.which === 27) {
+        document.querySelector(".style-switcher").classList.remove("open");
+      }
+    });
   }
 });
 
