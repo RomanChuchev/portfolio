@@ -602,7 +602,12 @@
             <h4 class="contact-sub-title padd-15">
               I'M VERY RESPOSIVE TO MESSAGES
             </h4>
-            <form action="#" id="form" class="row form__body">
+            <form
+              action="https://formspree.io/f/xjvzzgkw"
+              method="POST"
+              id="form"
+              class="row form__body"
+            >
               <div class="contact-form padd-15">
                 <div class="row">
                   <div class="form-item col-6 padd-15">
@@ -622,8 +627,6 @@
                         name="email"
                         class="form-control _req _email"
                         placeholder="Email"
-                        required
-                        pattern=".+@\w+\.\w+"
                       />
                     </div>
                   </div>
@@ -652,25 +655,43 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="checkbox">
-                    <input
-                      id="formAgreement"
-                      checked
-                      type="checkbox"
-                      name="agreement"
-                      class="checkbox__input _req"
-                    />
-                    <label for="formAgreement" class="checkbox__label"
-                      ><span
-                        >Я даю свое согласие на обработку персональных данных в
-                        соответствии с <a href="">Условиями</a>*</span
-                      ></label
-                    >
+                  <div class="form-item col-12 padd-15">
+                    <div class="checkbox">
+                      <input
+                        id="formAgreement"
+                        checked
+                        type="checkbox"
+                        name="agreement"
+                        class="checkbox__input _req"
+                      />
+                      <label for="formAgreement" class="checkbox__label"
+                        ><span
+                          >Я даю свое согласие на обработку персональных данных
+                          в соответствии с
+                          <a
+                            target="_blank"
+                            href="http://www.consultant.ru/document/cons_doc_LAW_61801/6c94959bc017ac80140621762d2ac59f6006b08c/"
+                            >Условиями</a
+                          ></span
+                        ></label
+                      >
+                    </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="form-item col-12 padd-15">
+                <div class="row btn-group">
+                  <div class="form-item col-6 padd-15">
                     <button type="submit" class="btn">Send Message</button>
+                  </div>
+                  <div id="form-status" class="col-6"></div>
+                </div>
+              </div>
+              <div class="row hidden">
+                <div id="thanks" class="service-item">
+                  <div class="service-item-inner">
+                    <div class="icon">
+                      <i class="fa fa-heart"></i>
+                    </div>
+                    <h4>Thanks for your submission!</h4>
                   </div>
                 </div>
               </div>
@@ -728,9 +749,9 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/send-email.js"></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
     <script src="js/popups.js"></script>
+    <script src="js/send-email.js"></script>
   </body>
 </html>

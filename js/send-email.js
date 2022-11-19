@@ -1,110 +1,109 @@
-"use strict";
+const form = document.getElementById("form");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("form");
-  form.addEventListener("submit", formSend);
+async function handleSubmit(event) {
+  event.preventDefault();
+  let error = formValidate(form);
+  const status = document.getElementById("form-status");
+  const data = new FormData(event.target);
 
-  async function formSend(e) {
-    e.preventDefault();
+  if (error === 0) {
+    form.classList.add("_sending");
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: { Accept: "application/json" },
+    })
+      .then((response) => {
+        if (response.ok) {
+          const thanksMessege = document.getElementById("thanks");
+          popupCard.innerHTML = "";
+          popupCard.append(thanksMessege);
+          popupOpen(popup);
 
-    let error = formValidate(form);
-
-    let formData = new FormData(form);
-    // formData.append('image', formImage.files[0]);
-    console.log("formData", formData);
-    if (error === 0) {
-      form.classList.add("_sending");
-      let response = await fetch("sendmail.php", {
-        method: "POST",
-        body: formData,
-      });
-      console.log("response", response);
-      if (response.ok) {
-        let result = await response.json();
-        alert(result.message);
-        formPreview.innerHTML = "";
-        form.reset();
-        form.classList.remove("_sending");
-      } else {
-        alert("Ошибка в запросе");
-        form.classList.remove("_sending");
-      }
-    } else {
-      alert("Заполните обязательные поля");
-    }
-  }
-
-  function formValidate() {
-    let error = 0;
-    let formReq = document.querySelectorAll("._req");
-
-    for (let index = 0; index < formReq.length; index++) {
-      const input = formReq[index];
-      formRemoveError(input);
-
-      if (input.classList.contains("_email")) {
-        if (emailTest(input)) {
-          formAddError(input);
-          error++;
+          form.reset();
+          form.classList.remove("_sending");
+          setTimeout(() => {
+            status.innerHTML = "";
+          }, 3000);
+        } else {
+          response.json().then((data) => {
+            if (Object.hasOwn(data, "errors")) {
+              status.innerHTML = data["errors"]
+                .map((error) => error["message"])
+                .join(", ");
+            } else {
+              status.innerHTML = `
+              <div class="form-item  padd-15">
+                <p class="form-error">Oops! There was a problem submitting your form!</p>
+              </div>`;
+              clearStatus(status);
+            }
+          });
         }
-      } else if (
-        input.getAttribute("type") === "checkbox" &&
-        input.checked === false
-      ) {
+      })
+      .catch((error) => {
+        status.innerHTML = `
+        <div class="form-item  padd-15">
+          <p class="form-error">Oops! There was a problem submitting your form!</p>
+        </div>`;
+        clearStatus(status);
+      });
+  } else {
+    status.innerHTML = `
+    <div class="form-item  padd-15">
+      <p class="form-error">Please fill in the required fields!</p>
+    </div>`;
+    clearStatus(status);
+  }
+}
+form.addEventListener("submit", handleSubmit);
+
+function formValidate() {
+  let error = 0;
+  let formReq = document.querySelectorAll("._req");
+
+  for (let index = 0; index < formReq.length; index++) {
+    const input = formReq[index];
+    formRemoveError(input);
+
+    if (input.classList.contains("_email")) {
+      if (emailTest(input)) {
         formAddError(input);
         error++;
-      } else {
-        if (input.value === "") {
-          formAddError(input);
-          error++;
-        }
+      }
+    } else if (
+      input.getAttribute("type") === "checkbox" &&
+      input.checked === false
+    ) {
+      formAddError(input);
+      error++;
+    } else {
+      if (input.value === "") {
+        formAddError(input);
+        error++;
       }
     }
-    return error;
   }
-  function formAddError(input) {
-    input.parentElement.classList.add("_error");
-    input.classList.add("_error");
+  return error;
+}
+function formAddError(input) {
+  input.parentElement.classList.add("_error");
+  input.classList.add("_error");
+}
+function formRemoveError(input) {
+  input.parentElement.classList.remove("_error");
+  input.classList.remove("_error");
+}
+//Функция теста email
+function emailTest(input) {
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
+function clearStatus(status) {
+  const formItems = document.querySelectorAll(".form-item");
+  for (let i = 0; i < formItems.length; i++) {
+    formItems[i].addEventListener("click", () => {
+      status.innerHTML = "";
+    });
   }
-  function formRemoveError(input) {
-    input.parentElement.classList.remove("_error");
-    input.classList.remove("_error");
-  }
-  //Функция теста email
-  function emailTest(input) {
-    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-  }
-
-  //Получаем инпут file в переменную
-  // const formImage = document.getElementById('formImage');
-  //Получаем див для превью в переменную
-  // const formPreview = document.getElementById('formPreview');
-
-  //Слушаем изменения в инпуте file
-  // formImage.addEventListener('change', () => {
-  // uploadFile(formImage.files[0]);
-  // });
-
-  // function uploadFile(file) {
-  // провераяем тип файла
-  // if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-  // 	alert('Разрешены только изображения.');
-  // 	formImage.value = '';
-  // 	return;
-  // }
-  // проверим размер файла (<2 Мб)
-  // if (file.size > 2 * 1024 * 1024) {
-  // 	alert('Файл должен быть менее 2 МБ.');
-  // 	return;
-  // }
-
-  // 		var reader = new FileReader();
-  // 		reader.onload = function (e) {
-  // 			formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
-  // 		};
-  // 		reader.onerror = function (e) {
-  // 			alert('Ошибка');
-  // 		};
-  // 		reader.readAsDataURL(file);
-  // 	}
-});
+}
