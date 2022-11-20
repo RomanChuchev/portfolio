@@ -127,9 +127,20 @@ body {
   border: none;
   background: var(--skin-color);
   transition: all 0.3s ease;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.btn:hover {
+.hover-shadow {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset,
+    0px 0px 5px 0px var(--skin-color);
+}
+.hover-shadow:hover {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset,
+    0px 0px 10px 0px var(--skin-color);
+}
+.hover-shadow:active {
   transform: scale(1.05);
 }
 
@@ -158,6 +169,10 @@ body {
   top: 50px;
   font-size: 30px;
   text-transform: capitalize;
+  display: inline-block;
+}
+.aside .logo:hover {
+  animation: blur1 1s ease-out;
 }
 
 .aside .logo a {
@@ -195,6 +210,26 @@ body {
   border-right: 5px solid var(--skin-color);
   top: 0;
   right: 0;
+}
+
+.aside .logo:hover a span {
+  animation: blur2 1s ease-out;
+}
+
+@keyframes blur1 {
+  from {
+    text-shadow: 0px 0px 10px var(--text-black-900),
+      0px 0px 10px var(--text-black-900), 0px 0px 25px var(--text-black-900),
+      0px 0px 25px var(--text-black-900), 0px 0px 25px var(--text-black-900),
+      0px 0px 25px var(--text-black-900), 0px 0px 25px var(--text-black-900),
+      0px 0px 25px var(--text-black-900), 0px 0px 50px var(--text-black-900),
+      0px 0px 50px var(--text-black-900);
+  }
+}
+@keyframes blur2 {
+  from {
+    color: var(--bg-black-100);
+  }
 }
 
 .aside .nav-toggler {
@@ -296,7 +331,11 @@ body {
   color: var(--text-black-900);
   z-index: 1;
 }
-
+.home .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .home .home-info {
   flex: 0 0 60%;
   max-width: 60%;
@@ -708,6 +747,7 @@ h3.my-profession {
 
 .form__body {
   position: relative;
+  padding-top: 20px;
 }
 .form__body::after {
   content: "";
@@ -716,11 +756,12 @@ h3.my-profession {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(51, 51, 51, 0.9) url("../images/loading.gif") center / 50px
+  background: rgba(51, 51, 51, 0.8) url("../images/loading.gif") center / 50px
     no-repeat;
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease 0s;
+  border-radius: 20px;
 }
 .form__body._sending::after {
   opacity: 1;
@@ -738,7 +779,7 @@ h3.my-profession {
   color: var(--text-black-900);
   text-align: center;
   font-size: 15px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .contact .contact-info-item {
@@ -852,7 +893,10 @@ input:-webkit-autofill {
   max-width: 100%;
 }
 .checkbox._error .checkbox__label::before {
-  box-shadow: 0 0 10px red;
+  box-shadow: 0 0 10px #d31414;
+}
+.checkbox._error .checkbox__input:checked + .checkbox__label:before {
+  box-shadow: none;
 }
 .checkbox__input {
   display: none;
@@ -868,7 +912,6 @@ input:-webkit-autofill {
   display: inline-flex;
   align-items: center;
   position: relative;
-  cursor: pointer;
 }
 
 .checkbox__label::before {
@@ -876,12 +919,14 @@ input:-webkit-autofill {
   align-self: flex-start;
   flex: 0 0 24px;
   height: 24px;
-  background-color: #fff;
+  background-color: var(--bg-black-100);
+  border: 1px solid var(--bg-black-50);
   border-radius: 4px;
   margin: 0px 10px 0px 0px;
+  cursor: pointer;
+  transition: transform 0.5s ease 0s;
 }
 .checkbox__label::after {
-  transition: transform 0.5s ease 0s;
   content: "✔";
   color: var(--skin-color);
   position: absolute;
@@ -889,10 +934,16 @@ input:-webkit-autofill {
   top: 2px;
   left: 4px;
   transform: scale(0);
+  cursor: pointer;
+  transition: transform 0.5s ease 0s;
 }
 
+.checkbox__label span {
+  color: var(--text-black-700);
+}
 .checkbox__label a {
   color: var(--skin-color);
+  cursor: pointer;
 }
 
 .contact .contact-form .btn {
