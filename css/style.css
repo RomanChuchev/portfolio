@@ -579,6 +579,7 @@ h3.my-profession {
   font-size: 16px;
   color: var(--text-black-900);
   border-bottom: 1px solid var(--bg-black-50);
+  transition: all 0.3s ease;
 }
 
 .about .about-content .personal-info .info-item p span {
@@ -824,11 +825,11 @@ h3.my-profession {
 .portfolio .portfolio-item {
   flex: 0 0 50%;
   max-width: 50%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .portfolio .portfolio-item-inner {
-  border: 6px solid var(--bg-black-100);
+  border: 2px solid var(--bg-black-50);
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -838,15 +839,30 @@ h3.my-profession {
 
 .portfolio .portfolio-item-inner .portfolio-img img {
   width: 100%;
+
   display: block;
   object-fit: cover;
+  transition: all 0.3s ease-out;
+  transform: scale(1.01);
+}
+.card3d {
   transform: scale(1);
-  transition: all 0.5s ease;
+  perspective: 500px;
+  position: relative;
+  z-index: 1;
 }
 
-.portfolio .portfolio-item .portfolio-item-inner:hover .portfolio-img img {
-  transform: scale(1.05);
+.card3d:hover {
+  transform: scale(1.2);
+  z-index: 100;
 }
+
+.card3d {
+  transition: all 0.3s ease-out;
+}
+/* .portfolio .portfolio-item .portfolio-item-inner:hover .portfolio-img img {
+  transform: scale(1.05);
+} */
 
 /* Contact */
 
@@ -917,11 +933,11 @@ h3.my-profession {
   background: var(--skin-color);
 }
 .contact .contact-info-item .icon:hover .fa {
-  font-size: 20px;
+  transform: scale(0.7);
   color: #ffffff;
 }
 .contact .contact-info-item .icon:hover .fa-brands {
-  font-size: 25px;
+  transform: scale(0.8);
   color: #ffffff;
 }
 .contact .contact-info-item h4 {
@@ -971,10 +987,11 @@ h3.my-profession {
 }
 
 .contact .contact-form .form-item .form-control:focus {
-  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+  box-shadow: 0 0 4px 0 var(--text-black-700);
 }
 .contact .contact-form .form-item .form-control:placeholder-shown._error {
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+  border: 1px solid rgba(255, 0, 0, 0.4);
 }
 
 .contact .contact-form .form-item textarea.form-control {
@@ -986,11 +1003,13 @@ h3.my-profession {
   .contact-form
   .form-item
   .form-control._email:invalid:not(:placeholder-shown) {
-  box-shadow: 0 0 2px #d31414 !important;
+  box-shadow: 0 0 4px #d31414 !important;
 }
 
 input:-webkit-autofill {
   -webkit-box-shadow: inset 0 0 0 50px var(--bg-black-100) !important; /* Цвет фона */
+  -webkit-text-fill-color: var(--text-black-700) !important; /* цвет текста */
+  color: var(--text-black-700) !important; /* цвет текста */
 }
 
 .checkbox {
@@ -1150,6 +1169,9 @@ input:-webkit-autofill {
     font-size: clamp(22px, 4vw, 30px);
     margin: 15px 0;
   }
+  .home-info .row {
+    justify-content: center;
+  }
 }
 @media (max-width: 991px) {
   .contact .contact-info-item,
@@ -1175,9 +1197,6 @@ input:-webkit-autofill {
     flex: 0 0 100%;
     justify-content: center;
     align-items: center;
-  }
-  .home-info .row {
-    justify-content: center;
   }
 }
 @media (max-width: 550px) {
