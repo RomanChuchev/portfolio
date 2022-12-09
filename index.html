@@ -64,7 +64,12 @@
     <div class="wrapper">
       <aside class="aside">
         <div class="logo">
-          <a href="#"><span>Ro</span>man</a>
+          <a href="https://github.com/RomanChuchev"><span>Ro</span>man</a>
+          <div class="atom">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+          </div>
         </div>
         <div class="nav-toggler">
           <span></span>
@@ -107,11 +112,17 @@
                   design and much more...
                 </p>
                 <div class="row">
-                  <a
-                    href="https://drive.google.com/uc?export=download&id=17944XPNy6b6gaHAkWkTV_48gMKohRqhP"
-                    class="btn hover-shadow download"
-                    >Download CV <i class="fa fa-download"></i>
-                  </a>
+                  <div class="btn">
+                    <span class="btn__circle"> </span>
+                    <a
+                      href="https://drive.google.com/uc?export=download&id=17944XPNy6b6gaHAkWkTV_48gMKohRqhP"
+                      class="btn__inner"
+                    >
+                      <span class="btn__text">
+                        Download CV <i class="fa fa-download"></i>
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
               <div class="home-img padd-15">
@@ -242,13 +253,18 @@
                         </div>
                       </div>
                     </div>
-                    <div class="row buttons padd-15">
-                      <a
-                        href="#contact"
-                        data-section-index="1"
-                        class="btn hover-shadow hire-me"
-                        >Hire me</a
-                      >
+
+                    <div class="row btn-group padd-15">
+                      <div class="btn">
+                        <span class="btn__circle"> </span>
+                        <a
+                          href="#contact"
+                          data-section-index="1"
+                          class="btn__inner hire-me"
+                        >
+                          <span class="btn__text"> Hire me </span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <div class="education padd-15">
@@ -680,9 +696,12 @@
                 </div>
                 <div class="row btn-group">
                   <div class="form-item col-6 padd-15">
-                    <button type="submit" class="btn hover-shadow">
-                      Send Message
-                    </button>
+                    <div class="btn">
+                      <span class="btn__circle"> </span>
+                      <button type="submit" class="btn__inner hire-me">
+                        <span class="btn__text"> Send Message </span>
+                      </button>
+                    </div>
                   </div>
                   <div id="form-status" class="col-6"></div>
                 </div>
@@ -716,13 +735,13 @@
         <i class="fas fa-cog fa-spin"></i>
       </div>
       <div class="day-night s-icon">
-        <i class="fas"></i>
+        <i class="fas moon"></i>
       </div>
       <h4>Theme Colors</h4>
       <div class="colors">
         <span
           id="color-1"
-          class="color"
+          class="color active"
           onclick="setActiveStyle('color-1')"
         ></span>
         <span
@@ -755,5 +774,6 @@
     <script src="js/style-switcher.js"></script>
     <script src="js/popups.js"></script>
     <script src="js/send-email.js"></script>
+    <script src="js/button-su.js"></script>
   </body>
 </html>

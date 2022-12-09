@@ -86,7 +86,9 @@
 }
 .style-switcher .colors .active {
   pointer-events: none;
-  border: 1px solid var(--bg-black-900);
+  border: 1px solid var(--bg-black-100);
+  box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3) inset;
+  /* transition: all 0.3s ease; */
 }
 #color-1 {
   background: #ec1839;

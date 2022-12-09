@@ -13,7 +13,6 @@ styleSwircherToggle.addEventListener("click", () => {
     );
 
     window.addEventListener("scroll", () => {
-      console.log("scroll");
       document.querySelector(".style-switcher").classList.remove("open");
     });
 
