@@ -15,7 +15,6 @@ if (cards.length > 0) {
     const card = cards[index];
     card.addEventListener("click", function (e) {
       popupCard.innerHTML = "";
-      console.log();
       popupCard.append(e.target.cloneNode(true));
       popupOpen(popup);
       e.preventDefault();

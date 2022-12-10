@@ -10,9 +10,9 @@ const navList = nav.querySelectorAll("li");
 const sections = document.querySelectorAll(".section");
 
 for (let i = 0; i < navList.length; i++) {
-  const a = navList[i].querySelector("a");
-  a.addEventListener("click", function () {
+  navList[i].querySelector("a").addEventListener("click", function () {
     removeBackSection();
+
     for (let j = 0; j < navList.length; j++) {
       if (navList[j].querySelector("a").classList.contains("active")) {
         addBackSection(j);
@@ -21,19 +21,23 @@ for (let i = 0; i < navList.length; i++) {
     }
     this.classList.add("active");
     showSection(this);
+
     if (window.innerWidth < 1200) {
       asideSectionTogglerBtn();
     }
   });
 }
+
 function removeBackSection() {
   for (let i = 0; i < sections.length; i++) {
     sections[i].classList.remove("back-section");
   }
 }
+
 function addBackSection(num) {
   sections[num].classList.add("back-section");
 }
+
 function showSection(el) {
   for (let i = 0; i < sections.length; i++) {
     sections[i].classList.remove("active");
@@ -41,6 +45,7 @@ function showSection(el) {
   const target = el.getAttribute("href").split("#")[1];
   document.querySelector("#" + target).classList.add("active");
 }
+
 function updateNav(el) {
   for (let i = 0; i < navList.length; i++) {
     navList[i].querySelector("a").classList.remove("active");
@@ -53,6 +58,7 @@ function updateNav(el) {
     }
   }
 }
+
 document.querySelector(".hire-me").addEventListener("click", function () {
   const sectionIndex = this.getAttribute("data-section-index");
   showSection(this);
@@ -62,15 +68,14 @@ document.querySelector(".hire-me").addEventListener("click", function () {
 });
 
 const navTogglerBtn = document.querySelector(".nav-toggler");
-const aside = document.querySelector(".aside");
 navTogglerBtn.addEventListener("click", () => {
   asideSectionTogglerBtn();
 });
+
 function asideSectionTogglerBtn() {
-  aside.classList.toggle("open");
+  document.querySelector(".aside").classList.toggle("open");
   navTogglerBtn.classList.toggle("open");
   for (let i = 0; i < sections.length; i++) {
     sections[i].classList.toggle("open");
   }
 }
-
