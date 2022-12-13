@@ -447,19 +447,19 @@ body {
 .home .home-info a .fa {
   font-size: 22px;
 }
-h3.hello {
+h1.hello {
   font-size: 28px;
   margin: 15px 0;
 }
 
-h3.hello span {
+h1.hello span {
   font-family: "Clicker Script", cursive;
   font-size: 38px;
   font-weight: 700;
   color: var(--skin-color);
 }
 
-h3.my-profession {
+h2.my-profession {
   font-size: 30px;
   margin: 15px 0;
 }
@@ -839,7 +839,7 @@ h3.my-profession {
 
 .portfolio .portfolio-item-inner .portfolio-img img {
   width: 100%;
-
+  height: 100%;
   display: block;
   object-fit: cover;
   transition: all 0.3s ease-out;
@@ -860,9 +860,6 @@ h3.my-profession {
 .card3d {
   transition: all 0.3s ease-out;
 }
-/* .portfolio .portfolio-item .portfolio-item-inner:hover .portfolio-img img {
-  transform: scale(1.05);
-} */
 
 /* Contact */
 
@@ -1160,12 +1157,12 @@ input:-webkit-autofill {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  h3.hello {
+  h1.hello {
     max-width: 300px;
     text-align: center;
     margin: 0 auto;
   }
-  h3.my-profession {
+  h2.my-profession {
     font-size: clamp(22px, 4vw, 30px);
     margin: 15px 0;
   }

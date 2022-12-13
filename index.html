@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1"
+    />
+    <meta
+      name="description"
+      content="Portfolio of Roman Chuchev - Frontend Developer"
+    />
+
     <title>Portfolio</title>
     <link
       type="image/png"
@@ -64,7 +72,10 @@
     <div class="wrapper">
       <aside class="aside">
         <div class="logo">
-          <a target="_blank" href="https://github.com/RomanChuchev"
+          <a
+            aria-label="Logo"
+            target="_blank"
+            href="https://github.com/RomanChuchev"
             ><span>Ro</span>man</a
           >
           <div class="atom">
@@ -78,19 +89,29 @@
         </div>
         <ul class="nav">
           <li>
-            <a href="#home" class="active"><i class="fa fa-home"></i>Home</a>
+            <a aria-label="home" href="#home" class="active"
+              ><i class="fa fa-home"></i>Home</a
+            >
           </li>
           <li>
-            <a href="#about"><i class="fa fa-user"></i>About</a>
+            <a aria-label="about" href="#about"
+              ><i class="fa fa-user"></i>About</a
+            >
           </li>
           <li>
-            <a href="#services"><i class="fa fa-list"></i>Services</a>
+            <a aria-label="services" href="#services"
+              ><i class="fa fa-list"></i>Services</a
+            >
           </li>
           <li>
-            <a href="#portfolio"><i class="fa fa-briefcase"></i>Portfolio</a>
+            <a aria-label="portfolio" href="#portfolio"
+              ><i class="fa fa-briefcase"></i>Portfolio</a
+            >
           </li>
           <li>
-            <a href="#contact"><i class="fa fa-comments"></i>Contact</a>
+            <a aria-label="contact" href="#contact"
+              ><i class="fa fa-comments"></i>Contact</a
+            >
           </li>
         </ul>
       </aside>
@@ -100,15 +121,15 @@
             <div class="row greetings">
               <div class="home-info padd-15">
                 <div class="row">
-                  <h3 class="hello">
+                  <h1 class="hello">
                     Hello, my name is
                     <span class="name">Roman Chuchev</span>
-                  </h3>
+                  </h1>
                 </div>
-                <h3 class="my-profession">
+                <h2 class="my-profession">
                   I'm a
                   <span class="typing"></span>
-                </h3>
+                </h2>
                 <p>
                   My experience lies in creating and designing websites, graphic
                   design and much more...
@@ -128,7 +149,14 @@
                 </div>
               </div>
               <div class="home-img padd-15">
-                <img src="images/hero.jpg" alt="hero" />
+                <picture>
+                  <source
+                    loading="lazy"
+                    srcset="images/hero.webp"
+                    type="image/webp"
+                  />
+                  <img loading="lazy" src="images/hero.jpg" alt="hero" />
+                </picture>
               </div>
             </div>
           </div>
@@ -501,7 +529,18 @@
                       href="https://romanchuchev.github.io/online-zoo-gulp/"
                       class="portfolio-img"
                     >
-                      <img src="./images/portfolio/zoo.png" alt="pet-store" />
+                      <picture>
+                        <source
+                          loading="lazy"
+                          srcset="./images/portfolio/zoo.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          loading="lazy"
+                          src="./images/portfolio/zoo.png"
+                          alt="pet-store"
+                        />
+                      </picture>
                     </a>
                   </div>
                 </div>
@@ -515,7 +554,18 @@
                       href="https://romanchuchev.github.io/todo-list/"
                       class="portfolio-img"
                     >
-                      <img src="./images/portfolio/to-do.png" alt="to-do" />
+                      <picture>
+                        <source
+                          loading="lazy"
+                          srcset="./images/portfolio/to-do.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          loading="lazy"
+                          src="./images/portfolio/to-do.png"
+                          alt="to-do"
+                        />
+                      </picture>
                     </a>
                   </div>
                 </div>
@@ -528,7 +578,18 @@
                       href="https://romanchuchev.github.io/puzzle/"
                       class="portfolio-img"
                     >
-                      <img src="./images/portfolio/puzzle.png" alt="puzzle" />
+                      <picture>
+                        <source
+                          loading="lazy"
+                          srcset="./images/portfolio/puzzle.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          loading="lazy"
+                          src="./images/portfolio/puzzle.png"
+                          alt="puzzle"
+                        />
+                      </picture>
                     </a>
                   </div>
                 </div>
@@ -541,10 +602,18 @@
                       href="https://romanchuchev.github.io/find_couple/"
                       class="portfolio-img"
                     >
-                      <img
-                        src="./images/portfolio/find-coupl.png"
-                        alt="find-coupl"
-                      />
+                      <picture>
+                        <source
+                          loading="lazy"
+                          srcset="./images/portfolio/find-coupl.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          loading="lazy"
+                          src="./images/portfolio/find-coupl.png"
+                          alt="find-coupl"
+                        />
+                      </picture>
                     </a>
                   </div>
                 </div>
@@ -557,7 +626,18 @@
                       href="https://romanchuchev.github.io/shop-project/"
                       class="portfolio-img"
                     >
-                      <img src="./images/portfolio/shop.png" alt="shop" />
+                      <picture>
+                        <source
+                          loading="lazy"
+                          srcset="./images/portfolio/shop.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          loading="lazy"
+                          src="./images/portfolio/shop.png"
+                          alt="shop"
+                        />
+                      </picture>
                     </a>
                   </div>
                 </div>
@@ -570,7 +650,18 @@
                       href="https://romanchuchev.github.io/meal-db/"
                       class="portfolio-img"
                     >
-                      <img src="./images/portfolio/meal.png" alt="meal" />
+                      <picture>
+                        <source
+                          loading="lazy"
+                          srcset="./images/portfolio/meal.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          loading="lazy"
+                          src="./images/portfolio/meal.png"
+                          alt="meal"
+                        />
+                      </picture>
                     </a>
                   </div>
                 </div>
@@ -589,7 +680,11 @@
             <h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICES</h4>
             <div class="row">
               <div class="contact-info-item padd-15">
-                <a target="_blank" href="tel:+7(977)280-56-92 ">
+                <a
+                  aria-label="+7(977)2805692"
+                  target="_blank"
+                  href="tel:+7(977)280-56-92 "
+                >
                   <div class="icon">
                     <i class="fa fa-phone"> </i></div
                 ></a>
@@ -599,6 +694,7 @@
 
               <div class="contact-info-item padd-15">
                 <a
+                  aria-label="github"
                   class="link"
                   target="_blank"
                   href="https://github.com/RomanChuchev"
@@ -611,7 +707,10 @@
               </div>
 
               <div class="contact-info-item padd-15">
-                <a target="_blank" href="mailto:romanok20@gmail.com"
+                <a
+                  aria-label="romanok20@gmail.com"
+                  target="_blank"
+                  href="mailto:romanok20@gmail.com"
                   ><div class="icon">
                     <i class="fa fa-envelope"></i></div
                 ></a>
@@ -620,7 +719,10 @@
               </div>
 
               <div class="contact-info-item padd-15">
-                <a target="_blank" href="https://t.me/roman_chuchev "
+                <a
+                  aria-label="@roman_chuchev"
+                  target="_blank"
+                  href="https://t.me/roman_chuchev "
                   ><div class="icon">
                     <i class="fa fas fa-paper-plane"></i></div
                 ></a>
@@ -781,13 +883,14 @@
       </div>
     </div>
     <script
+      defer
       src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/script.js"></script>
-    <script src="js/style-switcher.js"></script>
-    <script src="js/popups.js"></script>
-    <script src="js/send-email.js"></script>
-    <script src="js/hover.js"></script>
+    <script defer src="js/script.js"></script>
+    <script defer src="js/style-switcher.js"></script>
+    <script defer src="js/popups.js"></script>
+    <script defer src="js/send-email.js"></script>
+    <script defer src="js/hover.js"></script>
   </body>
 </html>
