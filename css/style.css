@@ -1,5 +1,6 @@
 :root {
   --bg-black-900: #f2f2fc;
+  --bg-black-700: #eaeaf7;
   --bg-black-100: #fdf9ff;
   --bg-black-50: #e8dfec;
   --text-black-900: #302e4d;
@@ -8,6 +9,7 @@
 
 body.dark {
   --bg-black-900: #151515;
+  --bg-black-700: #191919;
   --bg-black-100: #222222;
   --bg-black-50: #393939;
   --text-black-900: #ffffff;
@@ -482,7 +484,10 @@ h2.my-profession {
 }
 
 .home-img img {
+  border: 2px solid var(--skin-color);
   position: relative;
+  background: var(--bg-black-700);
+  transition: background 0.3s ease;
 }
 
 .home-img::after {
