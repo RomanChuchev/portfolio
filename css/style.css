@@ -59,6 +59,9 @@ body {
 .hidden {
   display: none !important;
 }
+.pointerNone {
+  pointer-events: none;
+}
 
 .padd-15 {
   padding-left: 15px;
@@ -405,6 +408,7 @@ body {
 
 .aside .nav li {
   display: block;
+  user-select: none;
 }
 
 .aside .nav li:not(:last-child) {
@@ -822,6 +826,7 @@ h2.my-profession {
   color: var(--skin-color);
   margin-right: 5px;
 }
+
 /* Portfolio */
 .portfolio .container {
   padding-bottom: 40px;
@@ -984,6 +989,9 @@ h2.my-profession {
   visibility: visible;
 }
 
+.contact address {
+  font-style: normal;
+}
 .contact-title {
   color: var(--skin-color);
   text-align: center;
@@ -1358,7 +1366,7 @@ input:-webkit-autofill {
 
 .popup__content {
   opacity: 0;
-  padding: 30px 20px;
+  margin: 30px 20px;
   position: relative;
   transition: all 0.5s ease;
   transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
@@ -1368,7 +1376,6 @@ input:-webkit-autofill {
 .popup.open .popup__content {
   transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
   transition: all 0.5s ease;
-
   opacity: 1;
   pointer-events: all;
 }
@@ -1379,8 +1386,8 @@ input:-webkit-autofill {
   border: unset;
   font-size: 24px;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -20px;
+  top: -20px;
 }
 
 .popup__close .fa {

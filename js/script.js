@@ -11,21 +11,35 @@ const sections = document.querySelectorAll(".section");
 
 for (let i = 0; i < navList.length; i++) {
   navList[i].querySelector("a").addEventListener("click", function () {
-    removeBackSection();
+    if (!navList[i].querySelector("a").classList.contains("active")) {
+      delay();
+      removeBackSection();
 
-    for (let j = 0; j < navList.length; j++) {
-      if (navList[j].querySelector("a").classList.contains("active")) {
-        addBackSection(j);
+      for (let j = 0; j < navList.length; j++) {
+        if (navList[j].querySelector("a").classList.contains("active")) {
+          addBackSection(j);
+        }
+        navList[j].querySelector("a").classList.remove("active");
       }
-      navList[j].querySelector("a").classList.remove("active");
-    }
-    this.classList.add("active");
-    showSection(this);
+      this.classList.add("active");
+      showSection(this);
 
-    if (window.innerWidth < 1200) {
-      asideSectionTogglerBtn();
+      if (window.innerWidth < 1200) {
+        asideSectionTogglerBtn();
+      }
     }
   });
+}
+
+function delay() {
+  for (let i = 0; i < navList.length; i++) {
+    navList[i].querySelector("a").classList.add("pointerNone");
+  }
+  setTimeout(() => {
+    for (let i = 0; i < navList.length; i++) {
+      navList[i].querySelector("a").classList.remove("pointerNone");
+    }
+  }, 800);
 }
 
 function removeBackSection() {
