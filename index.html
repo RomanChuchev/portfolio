@@ -68,7 +68,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
   </head>
-  <body class="dark">
+  <body data-lang="en" class="dark">
     <div class="wrapper">
       <aside class="aside">
         <div class="logo">
@@ -106,12 +106,14 @@
             </li>
             <li>
               <a aria-label="portfolio" href="#portfolio"
-                ><i class="fa fa-briefcase"></i>Portfolio</a
+                ><i class="fa fa-briefcase"></i
+                ><i class="lng-portfolio">Portfolio</i></a
               >
             </li>
             <li>
               <a aria-label="contact" href="#contact"
-                ><i class="fa fa-comments"></i>Contact</a
+                ><i class="fa fa-comments"></i>
+                <i class="lng-contact">Contact</i></a
               >
             </li>
           </ul>
@@ -124,15 +126,15 @@
               <div class="home-info padd-15">
                 <div class="row">
                   <h1 class="hello">
-                    Hello, my name is
-                    <span class="name">Roman Chuchev</span>
+                    <i class="lng-hello"> Hello, my name is</i>
+                    <span class="name lng-name">Roman Chuchev</span>
                   </h1>
                 </div>
                 <h2 class="my-profession">
-                  I'm a
+                  <i class="lng-im">I'm a</i>
                   <span class="typing"></span>
                 </h2>
-                <p>
+                <p class="lng-experience">
                   My experience lies in creating and designing websites, graphic
                   design and much more...
                 </p>
@@ -144,7 +146,8 @@
                       class="btn__inner"
                     >
                       <span class="btn__text">
-                        Download CV <i class="fa fa-download"></i>
+                        <i class="lng-download">Download CV</i>
+                        <i class="fa fa-download"></i>
                       </span>
                     </a>
                   </div>
@@ -784,7 +787,7 @@
             </address>
             <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
             <h4 class="contact-sub-title padd-15">
-              I'M VERY RESPOSIVE TO MESSAGES
+              I'M VERY RESPONSIVE TO MESSAGES
             </h4>
             <form
               action="https://formspree.io/f/xjvzzgkw"
@@ -905,6 +908,7 @@
       <div class="day-night s-icon">
         <i class="fas fa-sun"></i>
       </div>
+      <div data-lang="en" class="s-icon lang"></div>
       <h4>Theme Colors</h4>
       <div class="colors">
         <span
@@ -944,5 +948,6 @@
     <script defer src="js/popups.js"></script>
     <script defer src="js/send-email.js"></script>
     <script defer src="js/hover.js"></script>
+    <script defer src="js/lang.js"></script>
   </body>
 </html>

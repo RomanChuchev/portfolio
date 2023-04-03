@@ -45,6 +45,22 @@
 .style-switcher .day-night i {
   color: var(--text-black-900);
 }
+
+.style-switcher .lang {
+  top: 110px;
+  background-size: cover;
+  background-position: center;
+  border: 7px solid var(--bg-black-100);
+  outline: solid 1px var(--bg-black-50);
+}
+
+.style-switcher .lang[data-lang="ru"] {
+  background-image: url(../images/ru.png);
+}
+.style-switcher .lang[data-lang="en"] {
+  background-image: url(../images/en.jpg);
+}
+
 .style-switcher h4 {
   margin: 0 0 10px;
   color: var(--text-black-700);
