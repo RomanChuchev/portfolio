@@ -8,17 +8,17 @@ const languages = {
     ru: "Роман Чучев",
     en: "Roman Chuchev",
   },
-  name: {
-    ru: "Роман Чучев",
-    en: "Roman Chuchev",
+  about: {
+    ru: "О себе",
+    en: "About Me",
   },
-  name: {
-    ru: "Роман Чучев",
-    en: "Roman Chuchev",
+  home: {
+    ru: "Главная",
+    en: "Home",
   },
-  name: {
-    ru: "Роман Чучев",
-    en: "Roman Chuchev",
+  servises: {
+    ru: "Услуги",
+    en: "Servises",
   },
   contact: {
     ru: "Контакты",
