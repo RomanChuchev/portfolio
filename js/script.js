@@ -93,3 +93,24 @@ function asideSectionTogglerBtn() {
     sections[i].classList.toggle("open");
   }
 }
+
+// Возраст
+document
+  .querySelectorAll(".my-age")
+  .forEach((el) => (el.textContent = getAge()));
+
+function getAge() {
+  const now = new Date(); //Текущя дата
+  let today = new Date(now.getFullYear(), now.getMonth(), now.getDate()); //Текущя дата без времени
+  let dob = new Date(2000, 9, 9); //Дата рождения
+  let dobnow = new Date(today.getFullYear(), dob.getMonth(), dob.getDate()); //ДР в текущем году
+
+  //Возраст = текущий год - год рождения
+  let age = today.getFullYear() - dob.getFullYear();
+  //Если ДР в этом году ещё предстоит, то вычитаем из age один год
+  if (today < dobnow) {
+    age = age - 1;
+  }
+
+  return age;
+}
